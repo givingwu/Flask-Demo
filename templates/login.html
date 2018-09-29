@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Page</title>
+</head>
+<body>
+  {% if error %}
+  <div class="login-error">
+    <p>{{ error }}</p>
+  </div>
+  {% else %}
+    {% if username %}
+    <p>Yeah, welcome '{{ username }}' login and come back.</p>
+    {% else %}
+      <div class="login-panel">
+        <form action="/login" method="POST" class="login-from">
+          <div class="login-item">
+            <label for="username" class="login-label">
+              <input type="text" class="login-input" name="username" value="{{ username }}">
+            </label>
+          </div>
+          <div class="login-item">
+            <label for="password" class="login-label">
+              <input type="password" class="login-input" name="password">
+            </label>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <br>
+      <form action="/upload" method="POST" enctype="multipart/form-data" class="file-form">
+        <div class="login-item">
+          <label for="file">
+            <input type="file" name="file">
+          </label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    {% endif %}
+  {% endif %}
+</body>
+</html>
