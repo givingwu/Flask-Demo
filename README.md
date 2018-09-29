@@ -1,4 +1,4 @@
-# how to create a Django-Project?
+# how to create a Flask-Project?
 [python3 tutorial](https://docs.python.org/3/tutorial/)
 <br>
 [flask](http://flask.pocoo.org)
